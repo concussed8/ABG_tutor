@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Simulate a smartphone viewport -->
+  <meta name="viewport" content="width=375, initial-scale=1.0">
+  <title>Phone Container Only</title>
+  <style>
+    /* Reset default margin/padding and set full height layout */
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background: #E3DFD2;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    /* Center the phone container on the page */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    /* Smartphone container simulation */
+    .phone-container {
+      position: relative;
+      width: 375px;
+      height: 667px;
+      /*border: 4px solid #4169E1;*/ /* Royal Blue border */
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      background-color: #E3DFD2;
+    }
+    
+    /* Blurred background image inside the container */
+    .bg-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("https://raw.githubusercontent.com/concussed8/ABG_tutor/main/Images/HSN.jpg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      /* Add blur effect */
+      filter: blur(8px);
+      -webkit-filter: blur(8px);
+      z-index: 1;
+    }
+    
+    /* Centered text overlay inside the container */
+    .bg-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      width: 80%;
+      padding: 20px;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.4); /* semi-transparent black */
+      color: white;
+      font-weight: bold;
+      border: 3px solid #f1f1f1;
+    }
+  </style>
+</head>
+<body>
+  <!-- Phone container wrapping the background and text overlay -->
+  <div class="phone-container">
+    <div class="bg-image"></div>
+    <div class="bg-text">
+      <h2>Blurred Background</h2>
+      <h1 style="font-size:50px">I am John Doe</h1>
+      <p>And I'm a Photographer</p>
+    </div>
+  </div>
+  
+  <!-- JavaScript to auto-redirect after 5 seconds to the GitHub-hosted page -->
+  <script>
+    setTimeout(function() { 
+
+      window.location.href = "https://concussed8.github.io/ABG_tutor/Pages/abg_interp.html";
+    }, 5000);
+  </script>
+</body>
+</html>
