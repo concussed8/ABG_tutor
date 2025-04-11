@@ -77,7 +77,7 @@
     .bg-text h1 {
       font-size: 47px;
       margin-bottom: 15px;
-      text-align: center; /* Ensures any wrapped text is centered */
+      text-align: center;
     }
 
     .bg-text p {
@@ -96,11 +96,26 @@
     </div>
   </div>
 
-  <!-- Redirect after 5 seconds using setTimeout -->
+  <!-- Audio element for redirection sound -->
+  <audio id="redirectSound" preload="auto">
+    <source src="https://raw.githubusercontent.com/concussed8/ABG_tutor/main/Sounds/redirect.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Play sound after 5 seconds, then redirect when audio finishes -->
   <script>
     setTimeout(function() {
-      // Cache busting with a version parameter ensures the browser gets the updated file.
-      window.location.href = "https://concussed8.github.io/ABG_tutor/Pages/abg_interp.html?v=4";
+      var audioElem = document.getElementById('redirectSound');
+      // Play the sound
+      audioElem.play();
+      // When the sound ends, redirect
+      audioElem.onended = function() {
+        window.location.href = "https://concussed8.github.io/ABG_tutor/Pages/abg_interp.html?v=5";
+      };
+      // Fallback in case onended doesn't fire (e.g., after 3 seconds of playing)
+      setTimeout(function(){
+        window.location.href = "https://concussed8.github.io/ABG_tutor/Pages/abg_interp.html?v=5";
+      }, 3000);
     }, 5000);
   </script>
 </body>
