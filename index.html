@@ -6,13 +6,14 @@
   <meta name="viewport" content="width=375, initial-scale=1.0">
   <title>Phone Container Only</title>
   <style>
-    /* Basic reset and body setup */
+    /* Reset defaults */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
+    /* Basic body styling */
     body {
       background: #f0f0f0;
       font-family: Arial, sans-serif;
@@ -22,16 +23,16 @@
       min-height: 100vh;
     }
 
-    /* Phone-style container */
+    /* Smartphone-like container */
     .phone-container {
       position: relative;
       width: 375px;
       height: 667px;
       border: 4px solid black;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
       overflow: hidden;
-      background: transparent;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
       margin-top: 20px;
+      background: transparent;
     }
 
     /* Blurred background image */
@@ -41,14 +42,12 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: url("https://raw.githubusercontent.com/concussed8/ABG_tutor/main/Images/HSN.jpg");
-      background-size: cover;
-      background-position: center;
+      background: url("https://raw.githubusercontent.com/concussed8/ABG_tutor/main/Images/HSN.jpg") center/cover no-repeat;
       filter: blur(8px);
       z-index: 1;
     }
 
-    /* Text overlay container */
+    /* Centered text overlay using flexbox */
     .bg-text {
       position: absolute;
       top: 50%;
@@ -59,19 +58,22 @@
       padding: 20px;
       background-color: rgba(0, 0, 0, 0.5);
       border: 3px solid #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       text-align: center;
       color: white;
-    }
-
-    .bg-text h1 {
-      font-size: 47px;
-      margin-bottom: 15px;
-      text-align: center;
     }
 
     .bg-text h2 {
       font-size: 22px;
       margin-bottom: 10px;
+    }
+
+    .bg-text h1 {
+      font-size: 47px;
+      margin-bottom: 15px;
+      text-align: center; /* Ensures any wrapped text is centered */
     }
 
     .bg-text p {
@@ -81,10 +83,8 @@
   </style>
 </head>
 <body>
-
   <div class="phone-container">
     <div class="bg-image"></div>
-
     <div class="bg-text">
       <h2>Regional Critical Care Education</h2>
       <h1>ABG Interpretation Simulator</h1>
@@ -98,6 +98,5 @@
       window.location.href = "https://concussed8.github.io/ABG_tutor/Pages/abg_interp.html";
     }, 5000);
   </script>
-
 </body>
 </html>
