@@ -2,6 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <!-- Prevent caching -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
   <!-- Simulate a smartphone viewport -->
   <meta name="viewport" content="width=375, initial-scale=1.0">
   <title>Phone Container Only</title>
@@ -95,7 +99,7 @@
   <!-- Redirect after 5 seconds using setTimeout -->
   <script>
     setTimeout(function() {
-      // Cache busting with a query parameter ensures the browser fetches the latest version.
+      // Cache busting with a version parameter ensures the browser gets the updated file.
       window.location.href = "https://concussed8.github.io/ABG_tutor/Pages/abg_interp.html?v=4";
     }, 5000);
   </script>
